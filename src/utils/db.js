@@ -3,8 +3,6 @@ const mongoose = require('mongoose')
 
 const conectionDB = async () => {
   try {
-    console.log("url", config.mongo_url);
-    
     await mongoose.connect(config.mongo_url , {
       dbName: 'tienda'
     })

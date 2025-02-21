@@ -4,19 +4,19 @@ const config = require('./config/config');
 const db = require('./utils/db')
 
 const usersRoutes = require('./routes/user.routes');
-const bodyParser = require('body-parser');
-const router = require('./routes/user.routes');
+const prodcutRoutes = require('./routes/product.routes');
 
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(cors());
-// app.use(express.json());
+app.use(express.json());
+
+app.use(cors())
 
 db()
 
 app.use('/api/usuarios', usersRoutes)
+app.use('/api/productos', prodcutRoutes)
 
 
 console.log("corriendo en el puerto: ");
